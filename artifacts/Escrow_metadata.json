@@ -1,18 +1,44 @@
 {
 	"compiler": {
-		"version": "0.8.9+commit.e5eed63a"
+		"version": "0.8.13+commit.abaa5c0e"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_dispute1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_dispute2",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "agent",
+				"name": "buyer",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -25,7 +51,60 @@
 			},
 			{
 				"inputs": [],
+				"name": "confirmDelivery",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentState",
+				"outputs": [
+					{
+						"internalType": "enum Escrow.transactionState",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "dispute1",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "dispute2",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "handleDisputes",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -39,23 +118,61 @@
 			},
 			{
 				"inputs": [],
+				"name": "isBuyerIn",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isSellerIn",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "price",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "returnDeposit",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "verify",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "seller",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -87,11 +204,11 @@
 	},
 	"sources": {
 		"escrow.sol": {
-			"keccak256": "0x3e43341c831db5a4291b5fed551a14e2265caa4edae462ef9f4461a424734621",
+			"keccak256": "0xb5c5f51dd032074a5ea1be890af72f57fe7d5332693335076f59f1f2f969bdee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://652daf31e91e85e8e4c52c16db5f800a46e0cbc91a92742d57ccb72a132de102",
-				"dweb:/ipfs/QmeX4HSxzEh6kzU7tv1iYEvDVnMLkvtpovrNdQCCcbHgat"
+				"bzz-raw://0f47b96634574fa40cdeacb617bf79cebca08a28f8052627ffc8753a979075f0",
+				"dweb:/ipfs/QmbrZChGsKFby71Lf5e7Rd9SehzgwdtEW5QqSXjQ6zu37i"
 			]
 		}
 	},
